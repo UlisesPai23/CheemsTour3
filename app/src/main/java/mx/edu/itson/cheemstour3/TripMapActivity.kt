@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import mx.edu.itson.cheemstour3.entities.Trip
@@ -48,7 +49,7 @@ class TripMapActivity : AppCompatActivity(), OnMapReadyCallback {
                 trips.forEach { t ->
                     val latLng = LatLng(t.latitude, t.longitude)
 
-                    map?.addMarker(MarkerOptions().position(latLng).title(t.name))
+                    map?.addMarker(MarkerOptions().position(latLng).title(t.name).icon(BitmapDescriptorFactory.fromResource(R.drawable.cheems)))
 
                 }
             }
