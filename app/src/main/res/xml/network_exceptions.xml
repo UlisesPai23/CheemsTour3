@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<network-secrity-config>
-    <domain-config clearTextTrafficPermitted="true">
-        <domain includesUBDOMAINS="TRUE">127.0.0.1</domain>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="TRUE">10.31.9.6</domain>
     </domain-config>
-</network-secrity-config>
+</network-security-config>
