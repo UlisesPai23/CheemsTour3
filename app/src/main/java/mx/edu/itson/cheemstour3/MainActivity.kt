@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnTripForm = findViewById<View>(R.id.btnTripForm)
         btnTripForm.setOnClickListener (this)
 
+
     }
 
     override fun onClick(view: View) {
