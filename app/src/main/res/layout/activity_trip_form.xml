@@ -37,18 +37,6 @@
         android:layout_height="500dp"
         android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
-    <TextView
-        android:id="@+id/txt_lat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:visibility="gone"/>
-    <TextView
-        android:id="@+id/txt_lon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_save"

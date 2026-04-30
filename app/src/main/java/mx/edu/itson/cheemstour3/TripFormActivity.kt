@@ -15,6 +15,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
 class TripFormActivity : AppCompatActivity(), View.OnClickListener, OnMapReadyCallback {
@@ -68,6 +69,27 @@ class TripFormActivity : AppCompatActivity(), View.OnClickListener, OnMapReadyCa
             map?.addMarker(MarkerOptions().position(latLng).draggable(true))
             map?.moveCamera(CameraUpdateFactory.newLatLng(latLng))
             map?.animateCamera(CameraUpdateFactory.zoomTo(8f))
+
+            map?.setOnMarkerDragListener(object : GoogleMap.OnMarkerDragListener{
+                override fun onMarkerDrag(p0: Marker) {
+
+                }
+
+                override fun onMarkerDragEnd(marker: Marker) {
+                    val latLng = marker.position
+                    latitude = latLng.latitude
+                    longitude = latLng.longitude
+
+                    Log.d("Latitude", latitude.toString())
+                    Log.d("Longitude", longitude.toString())
+
+                }
+
+                override fun onMarkerDragStart(p0: Marker) {
+
+                }
+
+            })
 
         } catch (ex: Exception){
             Log.e("Error al cargar el mapa", ex.message.toString())
